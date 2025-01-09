@@ -28,8 +28,8 @@ env:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest # For Linux, use ubuntu-latest
-    environment: dev
+    runs-on: ubuntu-latest # For Linux, use ubuntu-latest
+    environment: prod
     steps:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v4
