@@ -12,9 +12,9 @@ $validDomains = @{
     'autologon.microsoftazuread-sso.com'   = $true
     'login.windows.net'                    = $true
     'portal.azure.com'                     = $true
-    '.logic.azure.com/'                    = $true
-    '.office.com/'                         = $true
-    '.cloud/'                              = $true
+    '.logic.azure.com'                     = $true
+    '.office.com'                          = $true
+    '.cloud'                               = $true
 }
 
 # Step 2: Extract the host from the incoming Referer header
