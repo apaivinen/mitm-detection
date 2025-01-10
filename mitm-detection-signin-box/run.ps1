@@ -13,6 +13,7 @@ $validDomains = @{
     'https://login.microsoft.com/'                  = $true
     'https://autologon.microsoftazuread-sso.com/'   = $true
     'https://login.windows.net'                     = $true
+    'https://portal.azure.com'                      = $true
     '.logic.azure.com/'                             = $true
     '.office.com/'                                  = $true
     '.cloud/'                                       = $true
