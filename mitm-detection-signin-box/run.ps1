@@ -21,7 +21,7 @@ $validDomains = @{
 
 # Step 2: Extract the host from the incoming Referer header
 $referer = ([uri]$request.headers.Referer).Host
-
+Write-Information "Referer: $referer"
 # Step 3: Check for exact match
 $exactMatch = $validDomains -contains $referer
 
