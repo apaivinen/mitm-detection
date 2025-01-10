@@ -7,14 +7,14 @@ $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
 # Step 1: Prepare a hash table with valid hosts
 $validDomains = @{
-    'https://login.microsoftonline.com/'            = $true
-    'https://login.microsoft.com/'                  = $true
-    'https://autologon.microsoftazuread-sso.com/'   = $true
-    'https://login.windows.net'                     = $true
-    'portal.azure.com'                              = $true
-    '.logic.azure.com/'                             = $true
-    '.office.com/'                                  = $true
-    '.cloud/'                                       = $true
+    'login.microsoftonline.com'            = $true
+    'login.microsoft.com'                  = $true
+    'autologon.microsoftazuread-sso.com'   = $true
+    'login.windows.net'                    = $true
+    'portal.azure.com'                     = $true
+    '.logic.azure.com/'                    = $true
+    '.office.com/'                         = $true
+    '.cloud/'                              = $true
 }
 
 # Step 2: Extract the host from the incoming Referer header
