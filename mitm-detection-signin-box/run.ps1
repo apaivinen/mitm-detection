@@ -24,11 +24,11 @@ $referer = ([uri]$request.headers.Referer).Host
 Write-Information "Referer: $referer"
 # Step 3: Check for exact match
 $exactMatch = $validDomains -contains $referer
-Write-Debug "Exact match: $exactMatch"
+Write-Information "Exact match: $exactMatch"
 
 # Step 4: Check for suffix match
 $suffixMatch = $validDomains.Keys | Where-Object { $referer -match "$_" }
-Write-Debug "Suffix match: $suffixMatch"
+Write-Information "Suffix match: $suffixMatch"
 
 # Step 5: Check if the host is not valid
 if (!$exactMatch -or !$suffixMatch) {
