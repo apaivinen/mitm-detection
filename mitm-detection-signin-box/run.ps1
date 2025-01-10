@@ -31,7 +31,7 @@ $suffixMatch = $validDomains.Keys | Where-Object { $referer -match "$_" }
 Write-Information "Suffix match: $suffixMatch"
 
 # Step 5: Check if the host is not valid
-if (!$exactMatch -or !$suffixMatch) {
+if (!$exactMatch -and !$suffixMatch) {
     # Host is not valid
     Write-Warning "Possible mitm detected at $date from host: $referer"
     # $ImageBytes = [Convert]::FromBase64String('REDACTED')
