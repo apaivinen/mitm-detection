@@ -36,7 +36,8 @@ if (!$exactMatch -and !$suffixMatch) {
     $imagePath = Join-Path -Path $PSScriptRoot -ChildPath "img/background_warning.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
    
- else {
+}
+else {
     # Host is valid, return a transparent pixel
     $imagePath = Join-Path -Path $PSScriptRoot -ChildPath "img/dead_pixel.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
