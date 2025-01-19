@@ -33,12 +33,12 @@ $suffixMatch = $validDomains.Keys | Where-Object { $referer -match "$_" }
 if (!$exactMatch -and !$suffixMatch) {
     # Host is not valid, return customized background
     Write-Warning "Possible mitm detected at $date from host: $referer"
-    $imagePath = Join-Path -Path $PSScriptRoot -ChildPath "img/black_pixel.png"
+    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/pixel_black.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
 } 
  else {
     # Host is valid, return a transparent pixel
-    $imagePath = Join-Path -Path $PSScriptRoot -ChildPath "img/dead_pixel.png"
+    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/pixel_transparent.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
  }
 

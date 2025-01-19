@@ -38,7 +38,7 @@ if (!$exactMatch -and !$suffixMatch) {
 }
 else {
     # Host is valid, return a transparent pixel
-    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/dead_pixel.png"
+    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/pixel_transparent.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
  }
 
