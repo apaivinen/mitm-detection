@@ -40,7 +40,6 @@ if (!$exactMatch -and !$suffixMatch) {
     # Host is valid, return a transparent pixel
     $imagePath = Join-Path -Path $PSScriptRoot -ChildPath "img/dead_pixel.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
-    $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
  }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
