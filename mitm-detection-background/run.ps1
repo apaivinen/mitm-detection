@@ -33,7 +33,8 @@ $suffixMatch = $validDomains.Keys | Where-Object { $referer -match "$_" }
 if (!$exactMatch -and !$suffixMatch) {
     # Host is not valid, return customized background
     Write-Warning "Possible mitm detected at $date from host: $referer"
-    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/background_warning.png"
+    #$imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/background_warning.png"
+    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/bilde.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
 }
 else {
