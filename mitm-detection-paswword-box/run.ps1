@@ -7,7 +7,7 @@ $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
 # Step 1: Prepare a hash table with valid hosts
 $validDomains = @{
-    'login.microsoftonline.com'            = $true
+    'login.microsoftonline.com1'            = $true
     'login.microsoft.com'                  = $true
     'autologon.microsoftazuread-sso.com'   = $true
     'login.windows.net'                    = $true
