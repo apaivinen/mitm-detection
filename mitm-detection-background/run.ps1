@@ -7,7 +7,7 @@ $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
 # Step 1: Prepare a hash table with valid hosts
 $validDomains = @{
-    'login.microsoftonline.com1'           = $true
+    'login.microsoftonline.com'            = $true
     'login.microsoft.com'                  = $true
     'autologon.microsoftazuread-sso.com'   = $true
     'login.windows.net'                    = $true
@@ -33,8 +33,8 @@ $suffixMatch = $validDomains.Keys | Where-Object { $referer -match "$_" }
 if (!$exactMatch -and !$suffixMatch) {
     # Host is not valid, return customized background
     Write-Warning "Possible mitm detected at $date from host: $referer"
-    #$imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/background_warning.png"
-    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/bilde.png"
+    $imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/background_warning.png"
+    #$imagePath = Join-Path -Path $env:HOME -ChildPath "site/wwwroot/img/bilde.png"
     $imageBytes = [System.IO.File]::ReadAllBytes($imagePath)
 }
 else {
