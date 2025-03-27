@@ -29,8 +29,6 @@ if (-not $request.headers.Referer) {
     Write-Information "Referer: $referer"
 }
 
-
-
 # Step 3: Check for exact match
 $exactMatch = $validDomains -contains $referer
 # Write-Information "Exact match: $exactMatch"
