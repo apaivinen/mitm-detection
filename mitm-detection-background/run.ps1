@@ -15,7 +15,7 @@ $validDomains = @{
     '.logic.azure.com'                     = $true
     '.office.com'                          = $true
     '.microsoft'                           = $true
-    'login.leikkikentta.com'               = $true
+    'leikkikentta.com'                     = $true
 }
 
 # Step 2: Extract the host from the incoming Referer header
