@@ -14,13 +14,13 @@ $validDomains = @{
     'portal.azure.com'                     = $true
     '.logic.azure.com'                     = $true
     '.office.com'                          = $true
-    '.microsoft'                               = $true
+    '.microsoft'                           = $true
     'login.leikkikentta.com'               = $true
 }
 
 # Step 2: Extract the host from the incoming Referer header
 $referer = ([uri]$request.headers.Referer).Host
-# Write-Information "Referer: $referer"
+ Write-Information "Referer: $referer"
 
 # Step 3: Check for exact match
 $exactMatch = $validDomains -contains $referer
