@@ -5,6 +5,8 @@ param($Request, $TriggerMetadata)
 
 $date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
+
+
 # Step 1: Prepare a hash table with valid hosts
 $validDomains = @{
     'login.microsoftonline.com'            = $true
@@ -19,8 +21,15 @@ $validDomains = @{
 }
 
 # Step 2: Extract the host from the incoming Referer header
-$referer = ([uri]$request.headers.Referer).Host
- Write-Information "Referer: $referer"
+if (-not $request.headers.Referer) {
+    Write-Warning "Referer header is missing or empty at $date"
+    $referer = 'leikkikentta.com'
+} else {
+    $referer = ([uri]$request.headers.Referer).Host
+    Write-Information "Referer: $referer"
+}
+
+
 
 # Step 3: Check for exact match
 $exactMatch = $validDomains -contains $referer
